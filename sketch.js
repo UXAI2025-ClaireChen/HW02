@@ -179,17 +179,9 @@ function draw() {
 
 
 function updateScore() {
-  for (let tree of trees) {
-    // Add debug information
-    console.log({
-      treeX: tree.x,
-      scoreZone: width/3,
-      scoreZoneEnd: width/3 - scrollSpeed,
-      inScoreZone: tree.x < width/3 && tree.x > width/3 - scrollSpeed
-    });
-    
+  for (let tree of trees) {    
     // If bird has passed a tree
-    if (tree.x < width/3 && tree.x > width/3 - scrollSpeed * 5) {
+    if (tree.x < width/3 && tree.x > width/3 - scrollSpeed * 2) {
       score++;
       scoreSound.play();
       console.log("Score updated! New score:", score);
